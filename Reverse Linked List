@@ -1,0 +1,17 @@
+# Given the head of a singly linked list, reverse the list, and return the reversed list.
+
+
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        ListNode nextptr = null;
+        ListNode prevptr = null;
+        ListNode current = head;
+        while(current != null){
+            nextptr = current.next;
+            current.next = prevptr;
+            prevptr = current;
+            current = nextptr;
+        }
+        return prevptr;
+    }
+}
